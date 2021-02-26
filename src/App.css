@@ -3,3 +3,9 @@ body{
   color: white;
   text-align: center;
 }
+.user{
+  border: 2px solid white;
+  border-radius: 30px;
+  margin: 20px;
+  padding: 10px;
+}

@@ -25,17 +25,20 @@ function Counter() {
 function Users() {
   const [user, setUser] = useState([]);
   useEffect(() => {
-    fetch('https://jsonplaceholder.typicode.com/posts')
+    fetch('https://jsonplaceholder.typicode.com/users')
       .then(res => res.json())
       .then(data => setUser(data))
   }, []);
   console.log(user);
   return (
     <div>
-      <h1>Dynamic user: {user.length}</h1>
-      <ul>
-        {user.map(user => <li>{user.title}</li>)}
-      </ul>
+      {user.map(user =>
+        <div className="user">
+          <h1>Name: {user.name}</h1>
+          <h2>Phone Number: {user.phone}</h2>
+          <h3>Email: {user.email}</h3>
+        </div>
+      )}
     </div>
   )
 }
